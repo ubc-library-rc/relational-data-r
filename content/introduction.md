@@ -9,21 +9,12 @@ has_toc: false
 # **Warm-up**
 
 ## Coming up with a scenario in which you need to work with multiple datasets
-
 Hints:
-<div style="overflow: hidden;
-  padding-top: 56.25%;
-  position: relative">
-  <iframe src="/slides/slides1.html" title="demo embedded slide deck" scrolling="no" frameborder="0"
-    style="border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;">
-   <p>Your browser does not support iframes.</p>
- </iframe>
-</div>
+![](https://www.r4epi.com/img/05_part_data_management/08_multiple_data_frames/goal.png)
+![](https://www.r4epi.com/img/05_part_data_management/08_multiple_data_frames/two_data_sets2.png)
+*Source: Brad Cannell, [R for Epidemiology](https://www.r4epi.com/working-with-multiple-data-frames.html#combining-data-frames-horizontally-adding-columns)*
+![](https://r4ds.hadley.nz/diagrams/relational.png)
+*Source: Garrett Grolemund & Hadley Wickham, [R for Data Science (2e)](https://r4ds.hadley.nz/)*
 
 ## Common scenarios
 * Combining **data from multiple agencies**  
