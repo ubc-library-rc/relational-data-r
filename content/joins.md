@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Joins
-nav_order: 5
+nav_order: 6
 parent: Workshop Content
 has_toc: false
 ---
