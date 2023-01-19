@@ -3,6 +3,7 @@ layout: default
 title: R Execution
 nav_order: 8
 parent: Workshop Content
+nav_exclude: true
 ---
 
 # **R Execution**

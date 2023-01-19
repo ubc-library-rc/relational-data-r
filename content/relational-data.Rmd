@@ -18,6 +18,9 @@ Load required packages (if no intalled yet, install first)
 ```{r}
 if (!require(tidyverse)) install.packages('tidyverse')
 if (!require(nycflights13)) install.packages('nycflights13')
+
+library(tidyverse)
+library(nycflights13)
 ```
 
 (**Optional**) Update R to the latest version
@@ -46,8 +49,9 @@ Document](https://rdocumentation.org/packages/nycflights13/versions/1.0.1)
 `flight`: All flights that departed from New York City (NYC) in 2013
 
 ```{r}
-View(flights)    
 ?flights
+glimpse(flights)
+View(flights)  
 ```
 
 `weather`: Hourly meterological data for each airport in NYC:
@@ -57,29 +61,33 @@ View(flights)
 -   Newark Liberty International Airport (EWR)
 
 ```{r}
-View(weather)    
 ?weather
+glimpse(weather)
+View(weather) 
 ```
 
 `planes`: Construction information about each plane
 
 ```{r}
-View(planes)    
-?planes
+?planes  
+glimpse(planes)
+View(planes)
 ```
 
 `airports`: Airport names and locations
 
 ```{r}
-View(airports)    
-?airports
+?airports  
+glimpse(airports)
+View(airports)
 ```
 
 `airline`: Translation between two letter carrier codes and names
 
 ```{r}
-View(airlines)    
 ?airlines
+glimpse(airlines)
+View(airlines)
 ```
 
 ## 1.1 Exercise 1
@@ -88,6 +96,15 @@ Why don't we put all the information in a data frame? What are the
 benefits of creating multiple data frames?
 
 Hint: Can you imagine what a combined data frame would look like?
+```{r}
+# You can get the combined data frame by running this chunk of code. No worries if it looks unfamiliar. You will know them well by the end of this workshop.
+OverallCombinedDat <- flights |>
+  full_join(weather, by = c('time_hour', 'origin')) |>
+  full_join(airports, by = c("origin" = "faa")) |>
+  full_join(airports, by = c("dest" = "faa"), suffix = c(".origin", ".dest")) |> 
+  full_join(planes, by = "tailnum") |>
+  full_join(airlines, by = "carrier")
+```
 
 # 2 Keys
 
@@ -218,9 +235,8 @@ Hint:
       ?_join(flights, by = "")
     ```
 
-```{=html}
 <!-- -->
-```
+
 -   Step 2: Select the necessary variables, weather conditions from
     `temp` to `visib` and `dep_delay`.
 
@@ -229,9 +245,8 @@ Hint:
       select()
     ```
 
-```{=html}
 <!-- -->
-```
+
 -   Step 3: Visualize the relationship between each weather condition
     and departure delay.
 
@@ -239,7 +254,7 @@ Hint:
     use_weather_flights %>%
       group_by() %>%
       summarise(delay = mean(dep_delay, na.rm = TRUE)) %>%
-      ggplot(aes(x = , y = delay)) +
+      ggplot(aes(x = ?, y = delay)) +
       geom_line() + geom_point()
     ```
 
