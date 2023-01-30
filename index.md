@@ -31,8 +31,8 @@ This workshop will introduce how to work with multiple data frames in R. At the 
 
 The following R markdown files contain R code used during the workshop to demonstrate how to work with multiple data frames through `dplyr` package. Please download the first file and open it with R Studio. The second file contains answers to exercises in the first file.
 
-- [R markdown file](relational-data.Rmd){:target="_blank"}
-- [R markdown file with answers](relational-data-answers.Rmd){:target="_blank"}
+- [R markdown file](../content/relational-data.Rmd){:target="_blank"}
+- [R markdown file with answers](../content/relational-data-answers.Rmd){:target="_blank"}
 
 ## Resources
 

@@ -6,7 +6,7 @@ output:
   html_document: default
   pdf_document: default
 editor_options:
-  chunk_output_type: console
+  chunk_output_type: inline
   markdown: 
     wrap: 72
 ---
@@ -50,7 +50,6 @@ Document](https://rdocumentation.org/packages/nycflights13/versions/1.0.1)
 
 ```{r}
 ?flights
-glimpse(flights)
 View(flights)  
 ```
 
@@ -62,7 +61,6 @@ View(flights)
 
 ```{r}
 ?weather
-glimpse(weather)
 View(weather) 
 ```
 
@@ -70,7 +68,6 @@ View(weather)
 
 ```{r}
 ?planes  
-glimpse(planes)
 View(planes)
 ```
 
@@ -78,7 +75,6 @@ View(planes)
 
 ```{r}
 ?airports  
-glimpse(airports)
 View(airports)
 ```
 
@@ -86,7 +82,6 @@ View(airports)
 
 ```{r}
 ?airlines
-glimpse(airlines)
 View(airlines)
 ```
 
@@ -96,15 +91,6 @@ Why don't we put all the information in a data frame? What are the
 benefits of creating multiple data frames?
 
 Hint: Can you imagine what a combined data frame would look like?
-```{r}
-# You can get the combined data frame by running this chunk of code. No worries if it looks unfamiliar. You will know them well by the end of this workshop.
-OverallCombinedDat <- flights |>
-  full_join(weather, by = c('time_hour', 'origin')) |>
-  full_join(airports, by = c("origin" = "faa")) |>
-  full_join(airports, by = c("dest" = "faa"), suffix = c(".origin", ".dest")) |> 
-  full_join(planes, by = "tailnum") |>
-  full_join(airlines, by = "carrier")
-```
 
 # 2 Keys
 
