@@ -30,33 +30,27 @@ Note. The bolded texts are names of data frames, and the cells below are the var
   *Case 4:* matching flights delay information and airports weather information to identify weather conditions that associated with the severest flight delays  
 
 ## A closer look at case 4
-Step 1
-{: .label .label-step}
-Read R Document
-{: .step}
+
+Read R Documents
+
 Input
 {: .label .label-green}
 ```r
 # Install the required packages if not yet installed
 if (!require(tidyverse)) install.packages('tidyverse')
 if (!require(nycflights13)) install.packages('nycflights13')
+
 # Load the packages to the current session
 library(tidyverse)
 library(nycflights13)
+
 # Call for the R document for nycflights13
 ?nycflights13
-```
 
-Step 2
-{: .label .label-step}
-Check each dataset
-{: .step}
-
-Input
-{: .label .label-green}
-```r
-# Check the flights data set
+# Call for the R document for the flights data set
 ?flights
+
+# Open the flights data in a separate tab
 View(flights)
 ```
 
