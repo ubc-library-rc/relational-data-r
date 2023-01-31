@@ -21,15 +21,15 @@ This workshop will introduce how to work with multiple data frames in R. At the 
 | 0:00 - 0:05 | Welcome and using Zoom |
 | 0:05 - 0:15 | Warm-up |  
 | 0:15 - 0:35 | Keys |
-| 0:35 - 0:55| Joins |
-| 0:55 - 0:60| Wrap-up and Discussion |
+| 0:35 - 0:55 | Joins |
+| 0:55 - 0:60 | Wrap-up and Discussion |
 
 ## Materials
 
 The following R markdown files contain R code used during the workshop. Please download the first file and open it with R Studio. The second file contains answers to exercises in the first file.
 
-- [R markdown file](../content/relational-data.Rmd){:target="_blank"}
-- [R markdown file with answers](../content/relational-data-answers.Rmd){:target="_blank"}
+- [R markdown file](content/relational-data.Rmd){:target="_blank"}
+- [R markdown file with answers](content/relational-data-answers.Rmd){:target="_blank"}
 
 ## Resources
 
