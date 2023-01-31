@@ -5,11 +5,8 @@ nav_order: 1
 ---
 
 
-Participants are expected to have some experience with basic data manipulation using R. If you are new to R and dplyr package, consider attending our other workshops or checking their materials first, e.g.,  
-[R concepts and basic syntax (beginner)](),  
-[Using RStudio and RMarkdown (beginner)](),    
-[Data manipulation with dplyr]().   
-Check the availability of those workshops through the UBC library Research Commons event calendar: [https://researchcommons.library.ubc.ca/events/](https://researchcommons.library.ubc.ca/events/).
+Participants are expected to have some experience with basic data manipulation using R. If you are new to R and dplyr package, consider attending our beginner R worksops first.  
+See the UBC library Research Commons [event calendar](https://researchcommons.library.ubc.ca/events/).
 {: .prereq}
 
 ## Learning objectives
@@ -29,7 +26,7 @@ This workshop will introduce how to work with multiple data frames in R. At the 
 
 ## Materials
 
-The following R markdown files contain R code used during the workshop to demonstrate how to work with multiple data frames through `dplyr` package. Please download the first file and open it with R Studio. The second file contains answers to exercises in the first file.
+The following R markdown files contain R code used during the workshop. Please download the first file and open it with R Studio. The second file contains answers to exercises in the first file.
 
 - [R markdown file](../content/relational-data.Rmd){:target="_blank"}
 - [R markdown file with answers](../content/relational-data-answers.Rmd){:target="_blank"}
