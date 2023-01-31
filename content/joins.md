@@ -16,13 +16,12 @@ Combining two data frames seems easy if the rows are perfectly aligned. However,
 ## Mutating join
 Description in R Document mutate-joins {dplyr} [Package dplyr version 1.0.10]
 {: .label .label-red}
-```
 > The mutating joins add columns from y to x, matching rows based on the keys:  
 * inner_join(): includes all rows in x and y.  
 * left_join(): includes all rows in x.  
 * right_join(): includes all rows in y.  
 * full_join(): includes all rows in x or y.  
-```
+
 
 <p align="center">
 <img src="https://r4ds.hadley.nz/diagrams/join/venn.png" width="400" />  
@@ -85,11 +84,9 @@ use_weather_flights %>%
 ## Filtering join
 Description in R Document filter-joins {dplyr} [Package dplyr version 1.0.10]
 {: .label .label-red}
-```
 > Filtering joins filter rows from x based on the presence or absence of matches in y:  
 * semi_join() return all rows from x with a match in y.
 * anti_join() return all rows from x without a match in y.
-```
 
 <p align="center">
 <img src="images/filtering_join_venn.png" width="400" />  

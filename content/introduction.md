@@ -26,7 +26,7 @@ Note. The bolded texts are names of data frames, and the cells below are the var
   *Case 2:* binding student performance data from different classes and schools to examine the relationships among individual performance, class, and school level factors such as class size and school funding
 * Combining **data from multiple time points**  
   *Case 3:* matching several waves of survey data pre, during and post a six-month group psychotherapy intervention to track the change of depression levels of each individual to evaluate the effectiveness of the intervention  
-* Working with **data from database tables**
+* Working with **data from database tables**  
   *Case 4:* matching flights delay information and airports weather information to identify weather conditions that associated with the severest flight delays  
 
 ## A closer look at case 4
@@ -35,7 +35,7 @@ Step 1
 Read R Document
 {: .step}
 Input
-{: .label .label-green }
+{: .label .label-green}
 ```r
 # Install the required packages if not yet installed
 if (!require(tidyverse)) install.packages('tidyverse')
@@ -53,7 +53,7 @@ Check each dataset
 {: .step}
 
 Input
-{: .label .label-green }
+{: .label .label-green}
 ```r
 # Check the flights data set
 ?flights
@@ -68,7 +68,7 @@ So far you have seen some reasons to work with multiple data frames:
 - data being collected separately from multiple agencies, units and time points,   
 - data being kept/stored separately because a huge combined data frame creates redundancy, takes up more memory, slows analysis speed, is less secure and harder to manage.
 
-The data frames must have at least one variable in common so that they can be combined. 
+The data frames must have at least one variable in common so that they can be combined.
 The variables two tables have in common that help them relate to each other are known as **keys**.
 {: .note}
 
