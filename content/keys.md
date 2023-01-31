@@ -27,10 +27,10 @@ Such a diagram would be excellent when we come across a new set of data frames, 
 
 ## Examining primary keys in R
 
-One way to examine whether a variable can uniquely identify each row is to `count()` by the primary key(s) and look for entries where `n`, i.e., the number of cases associated with each value of the primary key(s), is greater than one. For example, let's say we make a guess that `tailnum` is the primary key for the `planes` data frame, then we can check if any `tailnum` shows up more than once in `planes` by the following code.
+According to its definition, to examine whether a variable is a primary key, we can examine whether it uniquely identifies each row. To do this in R, we can use the `count()` function and see if all the `n`, i.e., the number of cases associated with each value of the variable, is equal to one. For example, let's say we make a guess that `tailnum` is the primary key for the `planes` data frame, then we can check if any `tailnum` shows up exactly once in `planes` by the following code.
 
 Input
-{: .label .label-green }
+{: .label .label-green}
 ```r
 planes %>%
   count(tailnum) %>%

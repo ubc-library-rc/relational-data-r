@@ -4,6 +4,10 @@ nav_exclude: true
 
 
 
+Check-in activity: What’s your area of study? Please drop it off in the chat.
+
+
+
 ## 1. What is relational database?
 
 To put it simple, relational data are multiple tables of data.

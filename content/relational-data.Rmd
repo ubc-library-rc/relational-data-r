@@ -36,15 +36,11 @@ library(nycflights13)
 
 # 1 Get to know `nycflights13`
 
-[R
-Document](https://rdocumentation.org/packages/nycflights13/versions/1.0.1)
+Look at the R document for the package
 
-> This package contains information about all flights that departed from
-> NYC (e.g. EWR, JFK and LGA) to destinations in the United States,
-> Puerto Rico, and the American Virgin Islands) in 2013: 336,776 flights
-> in total. To help understand what causes delays, it also includes a
-> number of other useful datasets. ![relational
-> diagram](https://r4ds.hadley.nz/diagrams/relational.png)
+```{r}
+?nycflights13
+```
 
 `flight`: All flights that departed from New York City (NYC) in 2013
 
@@ -98,10 +94,9 @@ Hint: Can you imagine what a combined data frame would look like?
 
 > A **foreign key** uniquely identifies an observation in another table.
 
-> Once you've identified the primary keys in your tables, it's good
-> practice to verify that they do indeed uniquely identify each
-> observation. One way to do that is to `count()` the primary keys and
-> look for entries where n is greater than one:
+Let's say we make a guess that `tailnum` is the primary key for the
+`planes` data frame, then we can check if any `tailnum` shows up more
+than once in `planes` by the `count()` function.
 
 ```{r}
 planes %>% 
@@ -135,79 +130,23 @@ Could you find an example of foreign key from those five data frames?
 
 # 3 Join tables
 
-> **Mutating joins** add new ***variables*** to one data frame from
-> matching observations in another
-
-> **Filtering joins** filter ***observations*** from one data frame
-> based on whether or not they match an observation in the other table
-
 ## 3.1 Mutating joins
 
-Mutating join example: add full airline name from `airlines` to the
-`flights` data
+Check the help information for the four type of join functions and run their examples.
 
 ```{r}
-flights %>% 
-  select(year:day, hour, tailnum, carrier) %>%  
-  left_join(airlines, by = "carrier")
+# run the following code line by line
+# after run each line, look at the help tab in the right bottom
+# scroll down to the examples section and run examples
+?inner_join
+?full_join
+?left_join
+?right_join
 ```
 
-It is called "mutating" joins because it could be achieved by using
-`mutate()` and R's base subsetting:
+### 3.1.1 Exercise 3
 
-```{r}
-flights %>% 
-  select(year:day, hour, tailnum, carrier) %>% 
-  mutate(name = airlines$name[match(carrier, airlines$carrier)]) 
-
-# hard to generalise when you need to match multiple variables, and takes close reading to figure out the overall intent.
-```
-
-Let's now use a simple example to see how the four types of mutating
-joins differ.
-
-```{r}
-x <- tribble( 
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     3, "x3")
-y <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2",
-     4, "y3")
-x
-y
-
-# A tribble is used for creating a row-wise, readable tibble in R, which is useful for creating small tables of data. A tibble is a new modern data frame, which keeps important features of a data frame and removes outdated features.
-```
-
-### 3.1.1 Inner join
-
-```{r}
-x %>% 
-  inner_join(y, by = "key")
-```
-
-### 3.1.2 Outer join
-
-```{r}
-x %>% 
-  left_join(y, by = "key")
-```
-
-```{r}
-x %>% 
-  right_join(y, by = "key")
-```
-
-```{r}
-x %>% 
-  full_join(y, by = "key")
-```
-
-### 3.1.5 [Exercise](https://r4ds.had.co.nz/relational-data.html#exercises-30) 3
+[Soure](https://jrnold.github.io/r4ds-exercise-solutions/relational-data.html#exercise-13.4.4)
 
 > What weather conditions make it more likely to see a delay?
 
@@ -238,7 +177,7 @@ Hint:
 
     ```{r}
     use_weather_flights %>%
-      group_by() %>%
+      group_by(?) %>%
       summarise(delay = mean(dep_delay, na.rm = TRUE)) %>%
       ggplot(aes(x = ?, y = delay)) +
       geom_line() + geom_point()
@@ -246,61 +185,23 @@ Hint:
 
 ## 3.2 Filtering joins
 
-> Similar to mutating joins, but affect the **observations** rather than
-> the **variables**:
-
-> `semi_join(x, y)` *keeps* all observations in x that have a match in
-> y.
-
-> `anti_join(x, y)` *drops* all observations in x that have a match in
-> y.
-
-### 3.2.1 Semi-join
-
-> Semi-joins are useful for matching filtered summary tables back to the
-> original rows. For example, imagine you've found the top two most
-> popular destinations:
+Check the help information for the four type of join functions and run their examples.
 
 ```{r}
-top_dest <- flights %>%
-  count(dest, sort = TRUE) %>%
-  head(2)
-top_dest
+# run the following code line by line
+# after run each line, look at the help tab in the right bottom
+# scroll down to the examples section and run examples
+?semi_join
+?anti_join
 ```
 
-> Now you want to find each flight that went to one of those
-> destinations. You could construct a filter yourself:
+### 3.2.1 Exercise 4
 
-```{r}
-flights %>% 
-  filter(dest %in% top_dest$dest)
-```
+[Source](https://jrnold.github.io/r4ds-exercise-solutions/relational-data.html#exercise-13.5.4)
 
-You can also use a semi-join, which does the same thing and could be
-more handy when you have multiple variables.
-
-```{r}
-flights %>% 
-  semi_join(top_dest)
-```
-
-### 3.2.2 Anti-join
-
-> Anti-joins are useful for diagnosing join mismatches. For example,
-> when connecting `flights` and `planes`, you might be interested to
-> know that there are many flights that don't have a match in `planes`:
-
-```{r}
-flights %>%
-  anti_join(planes, by = "tailnum") %>%
-  count(tailnum, sort = TRUE)
-```
-
-### 3.2.3 [Exercises](https://r4ds.had.co.nz/relational-data.html#exercises-31) 4
-
-> 2.  Find the 48 hours (over the course of the whole year) that have
->     the worst departure delays. Cross-reference it with the weather
->     data. Can you see any patterns?
+> Find the 48 hours (over the course of the whole year) that have the
+> worst departure delays. Cross-reference it with the weather data. Can
+> you see any patterns?
 
 Hint:
 
@@ -312,7 +213,7 @@ Hint:
     ```{r}
     worst_hours <- flights %>%
       mutate(hour = sched_dep_time %/% 100) %>%
-      group_by(origin, year, month, day, hour) %>%
+      group_by(origin, time_hour) %>%
       summarise(dep_delay = mean(dep_delay, na.rm = TRUE)) %>%
       ungroup() %>%
       arrange(desc(dep_delay)) %>%
@@ -324,8 +225,7 @@ Hint:
 
     ```{r}
     weather_most_delayed <- ?_join(weather, worst_hours, 
-                                      by = c("origin", "year",
-                                             "month", "day", "hour"))
+                                      by = c("origin", "time_hour"))
     ```
 
 -   Step 3: To get the weather for hours except for those hours, choose
@@ -333,8 +233,7 @@ Hint:
 
     ```{r}
     weather_less_delayed <- ?_join(weather, worst_hours, 
-                                      by = c("origin", "year",
-                                             "month", "day", "hour"))
+                                      by = c("origin", "time_hour"))
     ```
 
 -   Step 4: Compare the average weather conditions in the most and less

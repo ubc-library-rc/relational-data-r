@@ -10,12 +10,9 @@ has_toc: false
 
 ## Coming up with a scenario in which you need to work with multiple datasets
 Hints:
-<p align="center">
-<img src="https://www.r4epi.com/img/05_part_data_management/08_multiple_data_frames/goal.png" width="600" />  
-<img src="https://www.r4epi.com/img/05_part_data_management/08_multiple_data_frames/two_data_sets2.png" width="600" />  
-</p>
-*Source: Brad Cannell, [R for Epidemiology](https://www.r4epi.com/working-with-multiple-data-frames.html#combining-data-frames-horizontally-adding-columns)*
-
+1. Scenarios when you have to combine variables (columns) from multiple sources
+2. Scenarios when you have to combine records (rows) from several units or time points
+3. Scenarios when you have to work with databases, e.g.,
 <p align="center">
 <img src="https://r4ds.hadley.nz/diagrams/relational.png" width="600" />
 </p>
@@ -35,14 +32,8 @@ Note. The bolded texts are names of data frames, and the cells below are the var
 ## A closer look at case 4
 Step 1
 {: .label .label-step}
-Read [R Document](https://rdocumentation.org/packages/nycflights13/versions/1.0.1)
+Read R Document
 {: .step}
-
-Step 2
-{: .label .label-step}
-Check each dataset in R Studio
-{: .step}
-
 Input
 {: .label .label-green }
 ```r
@@ -52,6 +43,18 @@ if (!require(nycflights13)) install.packages('nycflights13')
 # Load the packages to the current session
 library(tidyverse)
 library(nycflights13)
+# Call for the R document for nycflights13
+?nycflights13
+```
+
+Step 2
+{: .label .label-step}
+Check each dataset
+{: .step}
+
+Input
+{: .label .label-green }
+```r
 # Check the flights data set
 ?flights
 View(flights)
