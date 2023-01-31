@@ -10,7 +10,7 @@ has_toc: false
 
 ## Primary keys and foreign keys
 
-As mentioned in the previous section, combining two data frames requires at least a key variable shared by those data frames.
+As mentioned in the previous section, combining two data frames requires at least one **key**, a variable shared by those data frames.
 * If a key variable or set of variables uniquely identifies each observation/row in a data frame, it is called the **primary key** of that data frame.
 * If a key variable or set of variables in a data frame uniquely identifies each observation/row in another data frame, it is called a **foreign key** in the current data frame.
 
@@ -48,8 +48,8 @@ Output
 ```
 
 ### Practice
-1. Could you identify and examine the primary keys for the other four data frames in the `nycflights13` packages?  
-2. Could you find an example of foreign key from those five data frames?
+1. Identify and examine the primary keys for the other four data frames in the `nycflights13` packages?  
+2. Find an example of foreign key from those five data frames?
 
 Once you are comfortable identifying keys, the next step is to see how they can help us join multiple data frames.
 {: .note}

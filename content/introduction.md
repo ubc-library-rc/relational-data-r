@@ -26,7 +26,7 @@ Note. The bolded texts are names of data frames, and the cells below are the var
   *Case 2:* binding student performance data from different classes and schools to examine the relationships among individual performance, class, and school level factors such as class size and school funding
 * Combining **data from multiple time points**  
   *Case 3:* matching several waves of survey data pre, during and post a six-month group psychotherapy intervention to track the change of depression levels of each individual to evaluate the effectiveness of the intervention  
-* Working with **data from relational databases[^1]**  
+* Working with **data from database tables**
   *Case 4:* matching flights delay information and airports weather information to identify weather conditions that associated with the severest flight delays  
 
 ## A closer look at case 4
@@ -64,14 +64,12 @@ View(flights)
 1. Check the other four data sets: `weather`, `airplanes`, `airports`, `airlines`.
 2. Why don't we put all the information in a data frame? What are the benefits of creating multiple data frames? Could you imagine what an overall combined data frame would look like?
 
-Up to now, you are assumed to get a sense of the need to work with multiple data frames.  
-Reasons include   
-1) data being collected separately from multiple agencies, units and time points,   
-2) data being kept/stored separately because a huge combined data frame creates redundancy, takes up more memory, slows analysis speed, is less secure and harder to manage.
-{: .note}
+So far you have seen some reasons to work with multiple data frames:
+- data being collected separately from multiple agencies, units and time points,   
+- data being kept/stored separately because a huge combined data frame creates redundancy, takes up more memory, slows analysis speed, is less secure and harder to manage.
 
-The data frames must have at least one variable in common so that they can be combined. Check if this rule applies to the scenarios you come up with.  
-The variable(s) two tables have in common that helps them relate to each other is known as keys. Now that we have developed an intuitive sense of keys, we will move on to the next section of identifying keys.
+The data frames must have at least one variable in common so that they can be combined. 
+The variables two tables have in common that help them relate to each other are known as **keys**.
 {: .note}
 
 [^1]: Relational_Database: If this term means nothing to you, you probably don't need to know it. For this workshop, you can think of it as a place where someone has put together multiple data frames that can be related for you. If you are highly interested, you may check the [Wikipedia page](https://en.wikipedia.org/wiki/Relational_database).
