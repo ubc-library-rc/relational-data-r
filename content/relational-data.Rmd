@@ -40,6 +40,7 @@ Look at the R document for the package
 
 ```{r}
 ?nycflights13
+help(package = 'nycflights13')
 ```
 
 `flight`: All flights that departed from New York City (NYC) in 2013
@@ -123,7 +124,7 @@ weather
 ```
 
 ```{r}
-flights 
+flights
 ```
 
 Could you find an example of foreign key from those five data frames?
@@ -132,7 +133,8 @@ Could you find an example of foreign key from those five data frames?
 
 ## 3.1 Mutating joins
 
-Check the help information for the four type of join functions and run their examples.
+Check the help information for the four type of join functions and run
+their examples.
 
 ```{r}
 # run the following code line by line
@@ -185,7 +187,8 @@ Hint:
 
 ## 3.2 Filtering joins
 
-Check the help information for the four type of join functions and run their examples.
+Check the help information for the four type of join functions and run
+their examples.
 
 ```{r}
 # run the following code line by line
