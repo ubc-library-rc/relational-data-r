@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 
-Participants are expected to have some experience with basic data manipulation using R. If you are new to R and dplyr package, consider attending our beginner R worksops first.  
+Participants are expected to have some experience with basic data manipulation using R. If you are new to R and dplyr package, consider attending our beginner R worksops first.
 See the UBC library Research Commons [event calendar](https://researchcommons.library.ubc.ca/events/).
 {: .prereq}
 
@@ -19,10 +19,11 @@ This workshop will introduce how to work with multiple data frames in R. At the 
 ## Schedule
 
 | 0:00 - 0:05 | Welcome and using Zoom |
-| 0:05 - 0:15 | Warm-up |  
+| 0:05 - 0:15 | Warm-up |
 | 0:15 - 0:35 | Keys |
 | 0:35 - 0:55 | Joins |
-| 0:55 - 0:60 | Wrap-up and Discussion |
+| 0:55 - 1:00 | Wrap-up and Discussion |
+| 1:00 - 1:30 | Optional Q & A |
 
 ## Materials
 
@@ -35,3 +36,6 @@ The following R markdown files contain R code used during the workshop. Please d
 
 * [Chapter 13 **Relational data** in the book **R for Data Science**](https://r4ds.had.co.nz/relational-data.html)
 * [Chapter 31 **Working with multiple data frames** in the book **R for Epidemiology**](https://www.r4epi.com/working-with-multiple-data-frames.html)
+
+
+<p style="color:grey; font-size:14px; padding-top: 2em"> This workshop was developed by Ashley Yue Mao (Author).
