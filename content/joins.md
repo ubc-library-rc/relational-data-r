@@ -140,7 +140,7 @@ To get the weather for hours except for those hours, choose a type of filtering 
 Input
 {: .label .label-green}
 ```r
-weather_most_delayed <- ?_join(weather, worst_hours, by = c("origin", "time_hour"))
+weather_less_delayed <- ?_join(weather, worst_hours, by = c("origin", "time_hour"))
 ```
 
 Step 4
