@@ -74,11 +74,15 @@ Visualize the relationship between each weather condition and departure delay.
 Input
 {: .label .label-green}
 ```r
-use_weather_flights %>%
-  group_by(?) %>%
-  summarise(delay = mean(dep_delay, na.rm = TRUE)) %>%
-  ggplot(aes(x = ?, y = delay)) +
-  geom_line() + geom_point()
+## group data to calculate mean delay per temperature
+flights.sum=use_weather_flights %>%
+  group_by(temp) %>%
+  summarise(mean_delay = mean(dep_delay, na.rm = TRUE))
+
+## plot the data
+ggplot(flights.sum, aes(x = temp, y = mean_delay)) +
+  geom_smooth(se=F) + 
+  geom_point()
 ```
 
 ## Filtering join
@@ -117,10 +121,13 @@ Input
 worst_hours <- flights %>%
   mutate(hour = sched_dep_time %/% 100) %>%
   group_by(origin, time_hour) %>%
-  summarise(dep_delay = mean(dep_delay, na.rm = TRUE)) %>%
+# new for R4.4.0 - need to add .groups = 'drop' to the summarise section to group by all the variables in group_by()
+  summarise(dep_delay = mean(dep_delay, na.rm = TRUE), .groups = 'drop') %>%
   ungroup() %>%
+# sort the data to have longest delay at the top of the dataframe
   arrange(desc(dep_delay)) %>%
-  slice(1:48)
+# keep only 5 longst average delays for easier visualisation 
+  slice(1:5)
 ```
 
 Step 2
@@ -153,7 +160,7 @@ Input
 weather_less_delayed <- weather_less_delayed %>%
   mutate(most_delayed = 'no')
 
-weather_most_delayed %>%
+weather.md.sum=weather_most_delayed %>%
   mutate(most_delayed = 'yes') %>%
   rows_append(weather_less_delayed) %>%
   group_by(most_delayed) %>%
