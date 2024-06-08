@@ -37,15 +37,15 @@ Input
 {: .label .label-green}
 ```r
 # Install the required packages if not yet installed
-if (!require(tidyverse)) install.packages('tidyverse')
-if (!require(nycflights13)) install.packages('nycflights13')
+install.packages('tidyverse')
+install.packages('nycflights13')
 
 # Load the packages to the current session
 library(tidyverse)
 library(nycflights13)
 
 # Call for the R document for nycflights13
-?nycflights13
+??nycflights13
 
 # Call for the R document for the flights data set
 ?flights
