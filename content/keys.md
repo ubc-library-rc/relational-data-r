@@ -32,7 +32,7 @@ According to its definition, to examine whether a variable is a primary key, we 
 Input
 {: .label .label-green}
 ```r
-planes %>%
+tailnum.count=planes %>%
   count(tailnum) %>%
   filter(n > 1)
 ```
