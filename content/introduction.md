@@ -55,7 +55,7 @@ View(flights)
 ```
 
 ### Practice
-1. Check the other four data sets: `weather`, `airplanes`, `airports`, `airlines`.
+1. Check the other four data sets: `weather`, `planes`, `airports`, `airlines`.
 2. Why don't we put all the information in a data frame? What are the benefits of creating multiple data frames? Could you imagine what an overall combined data frame would look like?
 
 So far you have seen some reasons to work with multiple data frames:
