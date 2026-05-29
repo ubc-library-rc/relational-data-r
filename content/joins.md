@@ -9,9 +9,9 @@ has_toc: false
 # **Joins**
 Combining two data frames seems easy if the rows are perfectly aligned. However, the order of the rows in two data frames is usually messy in reality, as shown in the following figure. That's where keys come into place. This section introduces how to join two data frames based on the identified keys.
 <p align="center">
-<img src="https://www.r4epi.com/img/05_part_data_management/08_multiple_data_frames/one_to_one.png" width="600" />
+<img src="https://www.r4epi.com/chapters/multiple_data_frames/one_to_one.png" width="600" />
 </p>
-*Source: Brad Cannell, [R for Epidemiology](https://www.r4epi.com/working-with-multiple-data-frames.html#relationship-types)*
+*Source: Brad Cannell, [R for Epidemiology](https://www.r4epi.com/chapters/multiple_data_frames/multiple_data_frames#relationship-types)*
 
 ## Mutating join
 Description in R Document mutate-joins {dplyr} [Package dplyr version 1.0.10]
